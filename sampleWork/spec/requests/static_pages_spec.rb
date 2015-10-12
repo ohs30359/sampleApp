@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe "StaticPages", type: :request do
   describe "GET /static_pages" do
-    it "works! (now write some real specs)" do
-      get static_pages_index_path
-      expect(response).to have_http_status(200)
+    it "OKが含まれているかテスト" do
+      visit '/static_pages/home'
+      expect(page).to_have_content('OK')
     end
   end
 end
