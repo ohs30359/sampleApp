@@ -1,2 +1,23 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#user_icon{
+  font-size: 1000%;
+}
+
+.community_icon{
+  font-size: 400%; 
+  li {
+    display: inline-block;
+  }
+}
+
+#profile_area{
+  margin-bottom: 50px;
+}
+
+#application_panel{
+  .index{
+    margin-top:30px;
+  }
+}

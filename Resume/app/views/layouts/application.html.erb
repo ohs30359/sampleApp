@@ -6,11 +6,47 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
 
-<p class ='h1'>TEST </p>
+<body style="padding-top:50px;">
 
-<%= yield %>
+  <div id="header" class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="./">Yushi_Nobuhara</a>
+      </div><!--./navbar-header -->
+      <div class="collapse navbar-collapse navbar-top">
+        <ul class="nav navbar-nav">
+          <li><a href="#">INFORMATION</a></li>
+        </ul>
+        <ul class="nav navbar-nav">
+          <li><a href="#">NEWS</a></li>
+        </ul>
+        <ul class="nav navbar-nav">
+          <li><a href="#">PRODUCTS</a></li>
+        </ul>
+      </div><!--./collapse -->
+    </div> <!--./container -->
+  </div><!-- #/header -->
+
+  <div class="container">
+    <div class="row">
+      <div class="page-header">
+        <h1><%= @template_values[:title] %> <small><%= @template_values[:msg] %></small></h1>
+      </div><!--./page-header -->
+      <div class="col-md-3">
+        <ul class="nav nav-pills nav-stacked">
+         
+          <% @template_values[:index].each do |index_title| %>
+            <li><a href='#' data-toggle='pill'><%= index_title %></a></li>
+          <% end%>
+       
+        </ul>
+      </div><!-- ./col-md-3 -->
+      <div class="col-md-9">
+        <%= yield %> 
+      </div><!-- ./col-md-9 -->
+    </div><!-- ./row -->
+  </div><!-- ./container -->
 
 </body>
 </html>
